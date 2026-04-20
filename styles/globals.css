@@ -273,3 +273,11 @@ body {
     position:fixed;
   }
 }
+
+
+@media (max-width:640px){
+  .responsiveBlock{
+    width:100%;
+    height:25%;
+  }
+}

@@ -40,6 +40,7 @@ import Experience from "./experience/Experience";
 import Projects from "./projects/Projects";
 import IconRenderer from "./components/IconRenderer";
 import Resume from "./maincomp/mainBlock";
+import Contact from "./contact/Contact";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -47,6 +48,7 @@ function App() {
   const [editMode, setEditMode] = useState(false);
   const [editId, setEditId] = useState<string | number | null>(null);
   const [activeBox, setActiveBox] = useState<number | null>(null);
+  const [resume,setResume] = useState<boolean>(true);
   const [showMain,setShowMain] = useState<boolean>(false);
   // Fetch the list of items from the backend
   useEffect(() => {
@@ -107,33 +109,37 @@ function App() {
   };
 
   const handlePosBlockClick = (value:number) => {
+    setResume(false);
     return true;
   }
   const resetActiveBox = () => {
     setActiveBox(null); // or setActiveBox(0) if you prefer
   };
+  
 
   return (
     <>
     <div className={`relative h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)] before:pointer-events-none ${showMain ? 'overflow-y-auto': ''}`}>
-      <IconRenderer type="fa" classes="text-orange-400 bounce-in-bottom fa50 z-[11] fixed opacity-20 animate-pulse" iconName="FaBasketballBall" setcolor="orange" />
-      <div onClick={()=>setShowMain(!showMain)} className={`group fixed inset-0 m-auto  text-center border border-slate-600 cursor-pointer bg-gradient-to-br from-slate-700 to-slate-800 rotate-45 flex w-28 h-28 z-[12] text-white shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 justify-center items-center hover:rotate-0 hover:scale-110 glow ${showMain ? 'inset-[inherit] top-[50px] right-[50px]' : ''}`}>
+      {/* <IconRenderer type="fa" classes="text-orange-400 bounce-in-bottom fa50 z-[11] fixed opacity-20 animate-pulse" iconName="FaBasketballBall" setcolor="orange" /> */}
+      <div onClick={()=>setShowMain(!showMain)} className={`${!resume ? 'hidden':''} group fixed inset-0 m-auto  text-center border border-slate-600 cursor-pointer bg-gradient-to-br from-slate-700 to-slate-800 rotate-45 flex w-28 h-28 z-[12] text-white shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 justify-center items-center hover:rotate-0 hover:scale-110 glow ${showMain ? 'inset-[inherit] top-[50px] right-[50px]' : ''}`}>
         <h1 className="-rotate-45 transition-all duration-500 group-hover:rotate-0 text-white font-bold text-3xl drop-shadow-lg">RMR</h1>
       </div>
 
       <Resume show={showMain} />
 
-      <PosBlock  resetActiveBox={resetActiveBox} icon="FaInfo" capital="R" containerClass={`left-0 top-0 glass cursor-pointer border-b border-r border-slate-600/50 hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`}  text="About Me" onClickHandler={() => handlePosBlockClick(1)}  newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md'>
+      <PosBlock  resetActiveBox={resetActiveBox} icon="FaInfo" capital="R" containerClass={`responsiveBlock left-0 top-0 glass cursor-pointer border-b border-r border-slate-600/50 hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`}  text="About Me" onClickHandler={() => handlePosBlockClick(1)} newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md'>
         <About />
       </PosBlock>
-      <PosBlock resetActiveBox={resetActiveBox}  icon="FaInternetExplorer" capital="A" containerClass={`right-0  top-0 glass cursor-pointer border-b border-l border-slate-600/50 raining-character hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`} text="Work Experience"  onClickHandler={() => handlePosBlockClick(1)} newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md' >
+      <PosBlock resetActiveBox={resetActiveBox}  icon="FaInternetExplorer" capital="A" containerClass={`responsiveBlock right-0  top-0 glass cursor-pointer border-b border-l border-slate-600/50 raining-character hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`} text="Work Experience"  onClickHandler={() => handlePosBlockClick(1)} newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md' >
         <Experience />  
       </PosBlock>
-      <PosBlock resetActiveBox={resetActiveBox}  icon="FaRProject" capital="N" containerClass={`bottom-0 left-0 glass  cursor-pointer  border-t border-r border-slate-600/50 hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`}  text="Portfolio" onClickHandler={() => handlePosBlockClick(1)} newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md' >
+      <PosBlock resetActiveBox={resetActiveBox}  icon="FaRProject" capital="N" containerClass={`responsiveBlock bottom-0 left-0 glass  cursor-pointer  border-t border-r border-slate-600/50 hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`}  text="Portfolio" onClickHandler={() => handlePosBlockClick(1)} newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md' >
         <Projects />
       </PosBlock>
 
-      <PosBlock resetActiveBox={resetActiveBox}  icon="FaEnvelopeOpenText" capital="I" containerClass={`bottom-0 right-0 glass  cursor-pointer border-t border-l border-slate-600/50 hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`}  text="Let's Work Together!" onClickHandler={() => handlePosBlockClick(1)}  newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md'  />
+      <PosBlock resetActiveBox={resetActiveBox}  icon="FaEnvelopeOpenText" capital="I" containerClass={`responsiveBlock bottom-0 right-0 glass  cursor-pointer border-t border-l border-slate-600/50 hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`}  text="Let's Work Together!" onClickHandler={() => handlePosBlockClick(1)} newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md'  >
+        <Contact />
+      </PosBlock>
     </div>
     {/* <Nav />
     <Banner /> */}

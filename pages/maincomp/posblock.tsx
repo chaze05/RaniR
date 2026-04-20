@@ -25,12 +25,13 @@ const ReusableComponent: React.FC<ReusableComponentProps> = ({ capital,container
       onClickHandler(); // Call the passed in onClick function
     }
   };
+  
   useEffect(() => {
     if (active) {
         // Set a timeout to update the showChildren state after 3 seconds
         const timer = setTimeout(() => {
             setShowChildren(true);
-        }, 250);
+        }, 1);
 
         // Clear the timeout if the component unmounts or if active changes
         return () => clearTimeout(timer);
@@ -51,13 +52,13 @@ const ReusableComponent: React.FC<ReusableComponentProps> = ({ capital,container
           e.stopPropagation();
           setActive(false);
         }}
-        className={`absolute top-5 right-5 text-4xl z-10 ${showChildren ? 'text-slate-800' : 'text-white'} font-bold cursor-pointer opacity-0 transition-all duration-500 hover:scale-125 hover:rotate-90 ${active ? 'flex opacity-100 animate-bounce' : 'hidden z-9'}`}
+        className={`absolute top-5 right-5 text-4xl z-10 ${showChildren ? 'text-slate-800' : 'text-white'} font-bold cursor-pointer opacity-0 transition-all duration-500 hover:scale-125 text-white text-slate-100 hover:rotate-90 ${active ? 'flex opacity-100 animate-bounce' : 'hidden z-9'}`}
       />
       <h1 className={`z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white font-bold flex-col justify-center text-center items-center fade-in-bottom ${active ? `hidden`: `flex`}`}>
         <IconRenderer type="fa" classes="fa50 hover:text-orange-500 transition-colors duration-300 " iconName={icon} setcolor="white"/>
         {text}
       </h1>
-      <div className={`overflow-auto py-5 flex-col justfy-center h-screen  container-fluid mx-auto w-full fade-in-fwd ${active ? `flex`: `hidden` }  `}>
+      <div className={` bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-auto py-5 flex-col justfy-center h-screen  container-fluid mx-auto w-full fade-in-fwd ${active ? `flex`: `hidden` }  `}>
         <div className="container mx-auto">
           {showChildren && children}
         </div>

@@ -5,8 +5,8 @@ import { AiFillFacebook,AiFillLinkedin,AiFillGithub  } from "react-icons/ai";
 import { LiaFacebookF,LiaGithub,LiaLinkedinIn,LiaStackOverflow  } from "react-icons/lia";
 const banner = () => {
   return (
-    <section className="relative overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl rounded-[40px] border border-slate-700/80 bg-slate-950/95 p-8 shadow-[0_40px_120px_rgba(15,23,42,0.55)] backdrop-blur-xl">
+    <section className="relative overflow-hidden px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl rounded-[40px] border border-slate-900 bg-slate-900/ p-8 shadow-[0_40px_120px_rgba(15,23,42,0.55)] backdrop-blur-xl">
         <div className="grid gap-10 lg:grid-cols-[360px_auto] items-center">
           <div className="relative rounded-[32px] bg-slate-900/90 p-6 shadow-2xl ring-1 ring-white/10 transition-transform duration-500 hover:-translate-y-1">
             <img
@@ -25,7 +25,7 @@ const banner = () => {
                 </div>
                 <div className="rounded-3xl bg-slate-950/80 p-4 ring-1 ring-slate-700/60">
                   <p className="text-sm uppercase tracking-[0.2em] text-slate-500">Focus</p>
-                  <p className="mt-2 text-2xl font-semibold text-white">JavaScript & PHP</p>
+                  <p className="mt-2 text-2xl font-semibold text-white">Full Stack</p>
                 </div>
                 <div className="rounded-3xl bg-slate-950/80 p-4 ring-1 ring-slate-700/60">
                   <p className="text-sm uppercase tracking-[0.2em] text-slate-500">Availability</p>
@@ -72,14 +72,6 @@ const banner = () => {
               <p className="text-slate-300 leading-8">
                 Hi, I’m Rani, a passionate developer focused on building responsive, user-friendly web experiences. I combine strong front-end craftsmanship with back-end knowledge so each project is polished, fast, and reliable.
               </p>
-              <div className="mt-8 flex flex-wrap justify-center gap-4">
-                <button className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                  Contact Me
-                </button>
-                <a href="#experience" className="rounded-full border border-slate-700 bg-slate-950/80 px-6 py-3 text-sm font-semibold text-slate-200 transition-all duration-300 hover:border-slate-500 hover:text-white">
-                  View Experience
-                </a>
-              </div>
             </div>
 
             <div className="rounded-3xl bg-slate-900/80 p-5 ring-1 ring-white/5">

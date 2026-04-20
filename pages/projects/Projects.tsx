@@ -77,14 +77,14 @@ const Projects = () => {
   );
 
   return (
-    <div className="min-h-screen text-black py-16 px-4">
+    <div className="min-h-screen text-white py-16 px-4">
       <div className="max-w-10xl mx-auto">
         <div className="mb-12 text-center">
           <p className="text-sm uppercase tracking-[0.4em] text-slate-500">Featured work</p>
-          <h1 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-black">
+          <h1 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-white">
             Developer Projects
           </h1>
-          <p className="mt-3 max-w-2xl mx-auto text-slate-900 text-base md:text-lg leading-7">
+          <p className="mt-3 max-w-2xl mx-auto text-slate-100 text-base md:text-lg leading-7">
             Showcase of polished applications with modern interfaces, smooth interactions, and 
             professional layout design.
           </p>
@@ -93,8 +93,8 @@ const Projects = () => {
         <div className="rounded-3xl shadow-2xl p-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
             <div>
-              <h2 className="text-2xl font-semibold text-black">Filter Projects</h2>
-              <p className="text-sm text-slate-900 mt-1">Choose a category to focus on the strongest work.</p>
+              <h2 className="text-2xl font-semibold text-white">Filter Projects</h2>
+              <p className="text-sm text-slate-100 mt-1">Choose a category to focus on the strongest work.</p>
             </div>
             <div className="flex flex-wrap gap-3">
               <button
@@ -123,7 +123,7 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
             {filteredProjects.map((project) => (
               <article
                 key={project.name}

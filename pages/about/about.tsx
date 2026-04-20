@@ -7,7 +7,7 @@ const about = () => {
     <>
     {/* <div className="absolute top-0 left-0 w-full h-full bg-yellow-100  bg-opacity-10">
     </div> */}
-    <Heading text={"About Me"} containerClass='text-black' />
+    <Heading text={""} containerClass='text-black' />
     <Banner />
     </>
   )
