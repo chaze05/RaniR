@@ -1,5 +1,6 @@
 import React from 'react'
-import { DiCss3Full, DiHtml5, DiJavascript1, DiLaravel, DiPhp, DiReact, DiWordpress } from 'react-icons/di'
+import Link from 'next/link';
+import { DiCss3Full, DiHtml5, DiJavascript1, DiLaravel, DiPhp, DiReact, DiWordpress, DiJqueryLogo } from 'react-icons/di'
 import Yearblock from './Yearblock'
 interface ProjectProps{
     logo:string,
@@ -12,13 +13,13 @@ interface ProjectProps{
 const Projblock: React.FC<ProjectProps> = ({logo,name,description,techstacks,link}) => {
   return (
     <div className="flex items-start fade-in-fwd">
-    <div className={`left-0 w-15 h-15 rounded-full  bg-white flex items-center font-bold px-2 py-6 relative ${openIndex == 1 ? `bg-green-100`: ''} transition-all ease-in-out duration-100`}>
+    <div className="left-0 w-15 h-15 rounded-full bg-white flex items-center font-bold px-2 py-6 relative transition-all ease-in-out duration-100">
         <span className="absolute w-[120%] h-1 bg-gray-400 -right-[112%] -z-10"></span>
         Present
     </div>
-    Yearblock
+    <Yearblock year="2024" index={0} />
     <div className="flex flex-col w-full bg-white-300 pl-20 relative flex-grow">
-        <div className="flex cursor-pointer items-center justify-between rounded-tl-lg rounded-tr-lg w-full p-3 bg-white" onClick={()=>toggleAccordion(1)}>
+        <div className="flex cursor-pointer items-center justify-between rounded-tl-lg rounded-tr-lg w-full p-3 bg-white" onClick={() => {}}>
             <h1 className="flex-bold text-2xl text-black my-0">Trackerteer Web Developer Corp</h1>
             <div className=" flex flex-row justify-center items-center">
                 <span className='bg-white border border-black flex rounded-lg text-center p-2 mx-1'><DiPhp className='text-blue-500 text-4xl' /></span>
@@ -32,7 +33,7 @@ const Projblock: React.FC<ProjectProps> = ({logo,name,description,techstacks,lin
             </div>
         </div>
 
-        <div className={` ${openIndex == 1 ? `h-max bg-white p-5 `:`h-0`} flex-grow rounded-br-lg rounded-bl-lg overflow-hidden transition-all duration-300 border-t-2 border-black`}>
+        <div className="h-max bg-white p-5 flex-grow rounded-br-lg rounded-bl-lg overflow-hidden transition-all duration-300 border-t-2 border-black">
             <div className="flex flex-col text-left">
                 <div className="flex justify-between">
                     <p className='font-bold text-xl'><span className="capitalize font-light text-md">position: </span>Back-End Developer</p>

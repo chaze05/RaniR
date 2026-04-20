@@ -36,14 +36,14 @@ const ReusableComponent: React.FC<ReusableComponentProps> = ({ capital,container
         return () => clearTimeout(timer);
     } else {
         setShowChildren(false);
-        resetActiveBox();
+        resetActiveBox?.();
     }
 }, [active,resetActiveBox]);
 
   return (
     <div
       onClick={handleClick}
-      className={`relative sm:absolute flex overflow-auto ${active ? `w-full h-full z-[11]` : `w-1/2 h-1/2 z-10 justify-center items-center overflow-hidden`} ${showChildren ? `${newBg}` : ` ${containerClass}`} absolute transition-all duration-300}`}
+      className={`relative sm:absolute flex overflow-auto slide-in-fwd-center ${active ? `w-full h-full z-[11] puff-in-center` : `w-1/2 h-1/2 z-10 justify-center items-center overflow-hidden`} ${showChildren ? `${newBg}` : ` ${containerClass}`} absolute transition-all duration-500 ease-in-out hover:shadow-2xl`}
     >
       <span className={`${active ? `hidden` : `flex`} absolute top-0 left-0 flex text-center items-center w-full h-full justify-center z-1 text-xl opacity-20 f50 max-h-[560px]`}>{capital}</span>
       <AiOutlineClose
@@ -51,13 +51,13 @@ const ReusableComponent: React.FC<ReusableComponentProps> = ({ capital,container
           e.stopPropagation();
           setActive(false);
         }}
-        className={`absolute top-5 right-5 text-4xl z-10 ${showChildren ? 'text-black' : 'text-white'} font-bold cursor-pointer opacity-0 transition-opacity duration-300 ${active ? 'flex opacity-100' : 'hidden z-9'}`}
+        className={`absolute top-5 right-5 text-4xl z-10 ${showChildren ? 'text-slate-800' : 'text-white'} font-bold cursor-pointer opacity-0 transition-all duration-500 hover:scale-125 hover:rotate-90 ${active ? 'flex opacity-100 animate-bounce' : 'hidden z-9'}`}
       />
-      <h1 className={`z-10 text-6xl text-blue-800 font-bold flex-col justify-center text-center items-center ${active ? `hidden`: `flex`}`}>
-        <IconRenderer type="fa" classes="fa50 text-blue-950" iconName={icon} setcolor="black"/>
+      <h1 className={`z-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white font-bold flex-col justify-center text-center items-center fade-in-bottom ${active ? `hidden`: `flex`}`}>
+        <IconRenderer type="fa" classes="fa50 hover:text-orange-500 transition-colors duration-300 " iconName={icon} setcolor="white"/>
         {text}
       </h1>
-      <div className={`overflow-auto py-5 flex-col justfy-center h-screen  container-fluid mx-auto w-full ${active ? `flex`: `hidden` }  `}>
+      <div className={`overflow-auto py-5 flex-col justfy-center h-screen  container-fluid mx-auto w-full fade-in-fwd ${active ? `flex`: `hidden` }  `}>
         <div className="container mx-auto">
           {showChildren && children}
         </div>

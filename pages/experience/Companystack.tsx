@@ -1,15 +1,16 @@
 import React from 'react'
+import { DiPhp, DiLaravel, DiHtml5, DiCss3Full, DiJavascript1, DiReact, DiWordpress } from 'react-icons/di'
 
 interface CompanyProps{
-    clickEvent:string,
+    clickEvent?: () => void,
     name:string,
-    stack:[icons:[],classes:string],
+    stack:any[],
 }
 
-const Companystack: React.FC<CompanyProps> = ({clickEvent,name,stack}) => {
+const Companystack: React.FC<CompanyProps> = ({ clickEvent, name, stack }) => {
   return (
-    <div className="flex cursor-pointer items-center justify-between rounded-tl-lg rounded-tr-lg w-full p-3 bg-white" onClick={()=>toggleAccordion(1)}>
-        <h1 className="flex-bold text-2xl text-black my-0">Trackerteer Web Developer Corp</h1>
+    <div className="flex cursor-pointer items-center justify-between rounded-tl-lg rounded-tr-lg w-full p-3 bg-white" onClick={clickEvent}>
+        <h1 className="flex-bold text-2xl text-black my-0">{name}</h1>
         <div className=" flex flex-row justify-center items-center">
             {/* {stack.map} */}
             <span className='bg-white border border-black flex rounded-lg text-center p-2 mx-1'><DiPhp className='text-blue-500 text-4xl' /></span>

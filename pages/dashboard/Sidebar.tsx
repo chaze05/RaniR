@@ -1,8 +1,7 @@
 import React from 'react'
 import { FaComments } from "react-icons/fa";
 
-
-const sidebar = (props:[]) => {
+const Sidebar = () => {
   return (
     <div className="flex flex-col justify-start items-center h-screen bg-black text-white">
         <div className="flex items-center border-b border-gray-300 gap-5 p-5">
@@ -45,4 +44,4 @@ const sidebar = (props:[]) => {
   )
 }
 
-export default sidebar
+export default Sidebar

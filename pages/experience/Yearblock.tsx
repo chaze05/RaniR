@@ -16,4 +16,4 @@ const Yearblock: React.FC<Yearprops> = ({year,index}) => {
 
 
 
-export default :
+export default Yearblock
