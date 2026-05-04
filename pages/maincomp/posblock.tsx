@@ -12,10 +12,11 @@ interface ReusableComponentProps {
   onClickHandler?: () => void;
   children?: React.ReactNode; // To accept the content passed between opening and closing tags
   icon:string,
-  resetActiveBox?: () => void;
+  resetActiveBox?: () => void,
+  showResume?: () => void;
 }
 
-const ReusableComponent: React.FC<ReusableComponentProps> = ({ capital,containerClass = '',text = 'Test', onClickHandler,children,newBg = 'bg-black',icon, resetActiveBox}) => {
+const ReusableComponent: React.FC<ReusableComponentProps> = ({ capital,containerClass = '',text = 'Test', onClickHandler,children,newBg = 'bg-black',icon, resetActiveBox, showResume}) => {
   const [active, setActive] = useState(false);
   const [showChildren, setShowChildren] = useState(false);
 
@@ -25,13 +26,13 @@ const ReusableComponent: React.FC<ReusableComponentProps> = ({ capital,container
       onClickHandler(); // Call the passed in onClick function
     }
   };
-  
+
   useEffect(() => {
     if (active) {
-        // Set a timeout to update the showChildren state after 3 seconds
+        // Set a timeout to update the showChildren state after the expansion animation completes
         const timer = setTimeout(() => {
             setShowChildren(true);
-        }, 1);
+        }, 500); // Match the faster puff-in-center animation (0.1s delay + 0.4s duration)
 
         // Clear the timeout if the component unmounts or if active changes
         return () => clearTimeout(timer);
@@ -39,7 +40,7 @@ const ReusableComponent: React.FC<ReusableComponentProps> = ({ capital,container
         setShowChildren(false);
         resetActiveBox?.();
     }
-}, [active,resetActiveBox]);
+}, [active,resetActiveBox,showResume]);
 
   return (
     <div

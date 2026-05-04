@@ -115,6 +115,7 @@ function App() {
   const resetActiveBox = () => {
     setActiveBox(null); // or setActiveBox(0) if you prefer
   };
+
   
 
   return (
@@ -127,17 +128,17 @@ function App() {
 
       <Resume show={showMain} />
 
-      <PosBlock  resetActiveBox={resetActiveBox} icon="FaInfo" capital="R" containerClass={`responsiveBlock left-0 top-0 glass cursor-pointer border-b border-r border-slate-600/50 hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`}  text="About Me" onClickHandler={() => handlePosBlockClick(1)} newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md'>
+      <PosBlock  resetActiveBox={resetActiveBox} icon="FaInfo" capital="R" containerClass={`responsiveBlock left-0 top-0 glass cursor-pointer hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`}  text="About Me" onClickHandler={() => handlePosBlockClick(1)} newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md'>
         <About />
       </PosBlock>
-      <PosBlock resetActiveBox={resetActiveBox}  icon="FaInternetExplorer" capital="A" containerClass={`responsiveBlock right-0  top-0 glass cursor-pointer border-b border-l border-slate-600/50 raining-character hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`} text="Work Experience"  onClickHandler={() => handlePosBlockClick(1)} newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md' >
+      <PosBlock   resetActiveBox={resetActiveBox}  icon="FaInternetExplorer" capital="A" containerClass={`responsiveBlock right-0  top-0 glass cursor-pointer raining-character hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`} text="Work Experience"  onClickHandler={() => handlePosBlockClick(1)} newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md' >
         <Experience />  
       </PosBlock>
-      <PosBlock resetActiveBox={resetActiveBox}  icon="FaRProject" capital="N" containerClass={`responsiveBlock bottom-0 left-0 glass  cursor-pointer  border-t border-r border-slate-600/50 hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`}  text="Portfolio" onClickHandler={() => handlePosBlockClick(1)} newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md' >
+      <PosBlock   resetActiveBox={resetActiveBox}  icon="FaRProject" capital="N" containerClass={`responsiveBlock bottom-0 left-0 glass  cursor-pointer hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`}  text="Portfolio" onClickHandler={() => handlePosBlockClick(1)} newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md' >
         <Projects />
       </PosBlock>
 
-      <PosBlock resetActiveBox={resetActiveBox}  icon="FaEnvelopeOpenText" capital="I" containerClass={`responsiveBlock bottom-0 right-0 glass  cursor-pointer border-t border-l border-slate-600/50 hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`}  text="Let's Work Together!" onClickHandler={() => handlePosBlockClick(1)} newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md'  >
+      <PosBlock   resetActiveBox={resetActiveBox}  icon="FaEnvelopeOpenText" capital="I" containerClass={`responsiveBlock bottom-0 right-0 glass  cursor-pointer hover:bg-slate-700/20 transition-all duration-100 hover:scale-105 ${showMain ? 'hidden':''}`}  text="Let's Work Together!" onClickHandler={() => handlePosBlockClick(1)} newBg='bg-gradient-to-br from-slate-100/90 to-slate-200/90 backdrop-blur-md'  >
         <Contact />
       </PosBlock>
     </div>
