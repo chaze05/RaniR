@@ -25,8 +25,8 @@
 
 // src/App.js
 import React, { useState, useEffect } from "react";
-import Nav from "./components/Nav";
-import Sidebar from "./components/Sidebar";
+import Nav from "@/components/Nav";
+import Sidebar from "@/components/Sidebar";
 import Link from "next/link";
 import Banner from "./homepage/banner";
 import Rpage from "./maincomp/rpage";
@@ -38,7 +38,7 @@ import Heading from "./maincomp/heading";
 import About from "./about/about";
 import Experience from "./experience/Experience";
 import Projects from "./projects/Projects";
-import IconRenderer from "./components/IconRenderer";
+import IconRenderer from "@/components/IconRenderer";
 import Resume from "./maincomp/mainBlock";
 import Contact from "./contact/Contact";
 

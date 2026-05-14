@@ -1,7 +1,7 @@
 import React from 'react'
 import Banner from './banner'
 import Heading from '../maincomp/heading'
-import IconRenderer from '../components/IconRenderer'
+import IconRenderer from '../../components/IconRenderer'
 const about = () => {
   return (
     <>

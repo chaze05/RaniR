@@ -1,7 +1,7 @@
 import React, { Children, useState, useEffect } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import * as FaIcons from "react-icons/fa"; // Imports all icons from Font Awesome
-import IconRenderer from '../components/IconRenderer';
+import IconRenderer from '../../components/IconRenderer';
 
 // Define the props interface
 interface ReusableComponentProps {

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React, {useState} from 'react'
 import { LiaFacebookF,LiaGithub,LiaLinkedinIn,LiaStackOverflow  } from "react-icons/lia";
 import { DiPhp,DiLaravel,DiHtml5,DiCss3Full,DiSass ,DiJavascript1,DiReact, DiWordpress,DiJqueryLogo,DiJqueryUiLogo, DiBootstrap} from "react-icons/di";
-import IconRenderer from '../components/IconRenderer';
+import IconRenderer from '../../components/IconRenderer';
 
 const Experience = () => {
     const [openIndex,setOpenIndex] = useState<number | null>(null);

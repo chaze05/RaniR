@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
-import TypeBox from '../components/TypeBox'
+import TypeBox from '../../components/TypeBox'
 import { AiFillFacebook,AiFillLinkedin,AiFillGithub  } from "react-icons/ai";
 import { LiaFacebookF,LiaGithub,LiaLinkedinIn,LiaStackOverflow  } from "react-icons/lia";
 const banner = () => {
